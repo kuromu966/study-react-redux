@@ -3,6 +3,6 @@
     "name": "react-study",
     "version": "0.1.0",
     "description": "React Redux Study",
-    "main": "index.js",
+    "main": "index.js"
   }
 }
