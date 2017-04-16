@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class FormInput extends React.Component {
   send(e) {
@@ -19,6 +20,6 @@ export default class FormInput extends React.Component {
 
 
 FormInput.propTypes = {
-  handleClick: React.PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 

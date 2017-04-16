@@ -10,7 +10,14 @@ module.exports = {
   devtool: 'source-map',
   devServer: {
     contentBase: path.resolve(__dirname, '../pages'),
-    port: 3000
+    port: 3000,
+    historyApiFallback: true,
+    proxy: {
+      '/api': {
+	target: 'http://localhost:3004',
+	pathRewrite: {"^/api" : ""}
+      }
+    }
   },
   resolve: {
     extensions: ['.js', '.jsx']
@@ -20,8 +27,14 @@ module.exports = {
       {
 	test: /\.jsx*$/,
 	exclude: /node_modules/,
-	loader: 'babel-loader'
+	loader: 'babel-loader',
+	options:{
+	  plugins: [
+	    'transform-runtime',
+	  ]
+	}
       }
     ]
-  }
+  },
+
 };

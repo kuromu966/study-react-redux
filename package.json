@@ -7,25 +7,33 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config config/webpack-production.config.js --progress",
     "build:debug": "webpack --config config/webpack.config.js --progress",
-    "start": "webpack-dev-server --config config/webpack-dev.config.js --watch --progress --inline"
+    "start:webpack": "webpack-dev-server --config config/webpack-dev.config.js --watch --progress --inline",
+    "start:api": "json-server --watch pages/api/db.json --port 3004",
+    "start": "npm-run-all -p start:*"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "redux": "^3.6.0",
+    "prop-types": "^15.5.6",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
     "react-redux": "^5.0.3",
     "react-router": "^4.0.0",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0",
     "redux-saga": "^0.14.4"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
     "babel-root-slash-import": "^1.1.0",
+    "json-server": "^0.9.6",
+    "npm-run-all": "^4.0.2",
     "path": "^0.12.7",
+    "redux-logger": "^3.0.1",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"
   }
