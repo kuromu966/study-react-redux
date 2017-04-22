@@ -1,8 +1,8 @@
 {
   "test": {
-    "name": "react-study",
+    "name": "dashboard",
     "version": "0.1.0",
-    "description": "React Redux Study",
+    "description": "Vario Dashboard JS Development Environment",
     "main": "index.js"
   }
 }

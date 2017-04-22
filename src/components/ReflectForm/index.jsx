@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider, connect } from 'react-redux';
 import FormApp from './FormApp';
-export const namespace = "reflectform";
+export const namespace = "EFLECT_FORM";
 
 
 ////////////////////////////////////////////////////////////////////////
@@ -14,28 +14,18 @@ export let State = {
 
 ////////////////////////////////////////////////////////////////////////
 // Action
-function send(value) {
-  return {
-    type: "ReflectForm_SEND",
-    value,
-  };
-}
-
-
 function mapDispatchToProps(dispatch) {
   return {
     onClick(value) {
-      dispatch(send(value));
+      dispatch({ type:`${namespace}_SEND`, value});
     },
   };
 }
 
 
-////////////////////////////////////////////////////////////////////////
-// Reducer
 export function Reducer(state="", action) {
   switch (action.type) {
-    case 'ReflectForm_SEND':
+    case `${namespace}_SEND`:
       return Object.assign({}, state, {
 	value: action.value,
       });
@@ -45,17 +35,15 @@ export function Reducer(state="", action) {
 }
 
 
-function mapStateToProps(state) {
-  return {
-    value: state.reflectform.value,
-  };
-}
-
-
 ////////////////////////////////////////////////////////////////////////
 // Container
+const StateKeys= Object.keys(State);
 export const Container = connect(
-  mapStateToProps,
+  (state) => {
+    let result = {};
+    StateKeys.map( (key) => result[key] = state[namespace][key]  );
+    return result;
+  },
   mapDispatchToProps
 )(FormApp);
 
