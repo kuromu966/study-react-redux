@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider, connect } from 'react-redux';
 import FormApp from './FormApp';
-export const namespace = "EFLECT_FORM";
+export const namespace = "REFLECT_FORM";
 
 
 ////////////////////////////////////////////////////////////////////////

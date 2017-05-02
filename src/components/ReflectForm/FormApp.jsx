@@ -8,7 +8,7 @@ export default class FormApp extends React.Component {
     return (
       <div>
 	Reflect Form<br />
-	<FormInput handleClick={this.props.onClick} />
+	<FormInput handleClick={this.props.onClick} data={this.props.value}/>
 	<FormDisplay data={this.props.value} />
       </div>
     );

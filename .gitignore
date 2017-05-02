@@ -7,3 +7,6 @@ yarn-debug.log*
 yarn-error.log*
 /pages/js
 /tmp
+/tmp*
+/pages/js
+/pages/3rdparty

@@ -11,7 +11,7 @@ export default class FormInput extends React.Component {
   render() {
     return (
       <form>
-	<input type="text" ref={(ref) => (this.myInput = ref)} defaultValue="" />
+	<input type="text" ref={(ref) => (this.myInput = ref)} defaultValue={this.props.data} />
 	<button onClick={(event) => this.send(event)}>Send</button>
       </form>
     );
@@ -21,5 +21,6 @@ export default class FormInput extends React.Component {
 
 FormInput.propTypes = {
   handleClick: PropTypes.func.isRequired,
+  data: PropTypes.string,
 };
 
