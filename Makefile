@@ -82,7 +82,9 @@ clean:
 
 .PHONY: setup
 setup:
-	npm install
+	npm install -g yarn
+	# npm install
+	yarn install
 	cp -r ./node_modules/admin-lte/dist/img ./node_modules/admin-lte/build
 	#npm dedupe
 
