@@ -31,7 +31,7 @@ React、Reduxを用いた勉強用のSource Codeを置いたRepositoryです。N
 
 ### Option
 
-* `DEBUG=[0|1]` 0=minimizeのon/off
+* `DEBUG=[0|1]` minimizeのoff/on
 
 
 ## Install
